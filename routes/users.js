@@ -1,39 +1,55 @@
 var express = require('express');
 var router = express.Router();
 
-const users = require('../data/users.json')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  console.log(req.query)
-  let {skip,take} = req.query
-  skip=skip ||0
-  take=take || 10
-  const u = [... users]
-  res.send(u.splice(skip,take));
+const {PrismaClient} = require('@prisma/client')
+const prisma = new PrismaClient()
+
+
+/* Afficher tout les utilisateurs */
+router.get('/', async function(req, res, next) {
+  const users = await prisma.user.findMany()
+  res.send(users);
 
 });
 
-router.get('/:id', function(req, res, next) {
-  const user=users.find((u)=>u.id === parseInt(req.params.id))
-  const r = user ? user :'Not found'
-  res.send(r);
+
+/* Afficher un utilisateur d'un id donnee*/
+router.get('/:id', async function(req, res, next) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: req.body.id ,
+    },
+  })
+  res.send(user)
 });
 
-router.delete('/:id',(req,res)=>{
-  console.log(req.params.id)
-  res.send('OK')
+
+/* supprimer un utilisateur */
+router.delete('/:id', async (req,res)=>{
+  const user = await prisma.user.delete({
+    where: { id: req.body.id },
+  })
+  res.send(user)
 })
 
-router.post('/',(req,res)=>{
- console.log(req.body)
- res.send(req.body)
-})
-             
 
-router.patch('/',(req,res)=>{
-  console.log(req.body)
-  res.send(req.body)
+/* Ajouter un utilisateur */
+router.post('/', async (req,res)=>{
+const user = await prisma.user.create({
+    data : req.body,
+    })
+ res.send(user)
+})
+  
+
+/* Mettre a jour un utilisateur */
+router.patch('/', async (req,res)=>{
+  const user = await prisma.user.update({
+    where: {id: req.body.id },
+    data : req.body,
+    })
+ res.send(user)
  })
 
 module.exports = router;

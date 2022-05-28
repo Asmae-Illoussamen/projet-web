@@ -1,44 +1,56 @@
 var express = require('express');
 var router = express.Router();
 
-const articles = require('../data/articles.json')
+
+const {PrismaClient} = require('@prisma/client')
+const prisma = new PrismaClient()
 
 
-router.get('/', function(req, res, next) {
-  console.log(req.query)
-  let {skip,take} = req.query
-  skip=skip ||0
-  take=take || 10
-  const a = [... articles]
-  res.send(a.splice(skip,take));
+/* Afficher tout les articles */
+router.get('/', async function(req, res, next) {
+  const articles = await prisma.article.findMany()
+  res.send(articles);
 
 });
 
-router.get('/:id', function(req, res, next) {
-  const article = articles.find((a)=>a.id === parseInt(req.params.id))
-  const r = article ? article :'Not found'
-  res.send(r);
+
+/* Afficher un article d'un id donnee*/
+router.get('/:id', async function(req, res, next) {
+  const article = await prisma.article.findUnique({
+    where: {
+      id: req.body.id ,
+    },
+  })
+  res.send(article)
 });
 
-router.delete('/:id',(req,res)=>{
-  console.log(req.params.id)
-  res.send('OK')
+
+/* supprimer un article */
+router.delete('/:id', async (req,res)=>{
+  const article = await prisma.article.delete({
+    where: { id: req.body.id },
+  })
+  res.send(article)
 })
 
-router.post('/',(req,res)=>{
- console.log(req.body)
- res.send(req.body)
-})
-             
 
-router.patch('/',(req,res)=>{
-  console.log(req.body)
-  res.send(req.body)
+/* Ajouter un article */
+router.post('/', async (req,res)=>{
+  const article = await prisma.article.create({
+    data : req.body,
+    })
+ res.send(article)
+})
+  
+
+/* Mettre a jour un utilisateur */
+router.patch('/',async (req,res)=>{
+  const article = await prisma.article.update({
+    where: {id: req.body.id },
+    data : req.body,
+    })
+ res.send(article)
  })
-
-
-
-
 
 
 module.exports = router;

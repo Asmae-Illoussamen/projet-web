@@ -1,40 +1,56 @@
 var express = require('express');
 var router = express.Router();
 
-const commentaires = require('../data/commentaires.json')
+
+const {PrismaClient} = require('@prisma/client')
+const prisma = new PrismaClient()
 
 
-router.get('/', function(req, res, next) {
-    console.log(req.query)
-    let {skip,take} = req.query
-    skip=skip ||0
-    take=take || 10
-    const co = [... commentaires]
-    res.send(co.splice(skip,take));
-  
+/* Afficher tout les commentaires */
+router.get('/', async function(req, res, next) {
+  const commentaires = await prisma.commentaire.findMany()
+  res.send(commentaires);
+
   });
   
-  router.get('/:id', function(req, res, next) {
-    const commentaire = commentaires.find((co)=>co.id === parseInt(req.params.id))
-    const r = commentaire ? commentaire :'Not found'
-    res.send(r);
-  });
-  
-  router.delete('/:id',(req,res)=>{
-    console.log(req.params.id)
-    res.send('OK')
+
+  /* Afficher un commentaire d'un id donnee*/
+  router.get('/:id', async function(req, res, next) {
+  const commentaire = await prisma.commentaire.findUnique({
+    where: {
+      id: req.body.id ,
+    },
   })
+  res.send(commentaire)
+  });
   
-  router.post('/',(req,res)=>{
-   console.log(req.body)
-   res.send(req.body)
+
+ /* supprimer un commentaire */
+router.delete('/:id', async (req,res)=>{
+  const commentaire = await prisma.commentaire.delete({
+    where: { id: req.body.id },
+  })
+  res.send(commentaire)
+})
+  
+
+/* Ajouter un commentaire */
+router.post('/', async (req,res)=>{
+  const commentaire = await prisma.commentaire.create({
+      data : req.body,
+      })
+   res.send(commentaire)
   })
                
   
-  router.patch('/',(req,res)=>{
-    console.log(req.body)
-    res.send(req.body)
-   })
+ /* Mettre a jour un commentaire */
+router.patch('/', async (req,res)=>{
+  const commentaire = await prisma.commentaire.update({
+    where: {id: req.body.id },
+    data : req.body,
+    })
+ res.send(commentaire)
+ })
   
   
   
