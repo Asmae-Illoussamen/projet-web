@@ -37,8 +37,8 @@ router.delete('/:id', async (req,res)=>{
 /* Ajouter un utilisateur */
 router.post('/', async (req,res)=>{
 const user = await prisma.user.create({
-    data : req.body,
-    })
+    data: req.body,
+})
  res.send(user)
 })
   

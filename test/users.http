@@ -9,17 +9,21 @@ DELETE http://localhost:3000/users/2 HTTP/1.1
 POST http://localhost:3000/users
 Content-Type: application/json
 
-{
-    "name" : "test",
-    "age"  : 20
-}
+ {
+    "email": "oom@mail.com",
+    "name": "om",
+    "password":"mot de passe",
+    "role": "AUTHOR"
+ }
 
 ###
-PATCH http:// localhost:3000/users
+PATCH http://localhost:3000/users
 Content-Type:application/json
 
-{
-    "id":3,
-    "name":"toto",
-    "age":20
-}
+  {
+    "id": 1,
+    "email": "test@gmail.com",
+    "name": "test",
+    "password": "TEST",
+    "role": "USER"
+  }
