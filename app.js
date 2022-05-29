@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/articles',articlesRouter);
-app.use('/categries',categoriesRouter);
+app.use('/categories',categoriesRouter);
 app.use('/commentaires',commentairesRouter);
 
 module.exports = app;

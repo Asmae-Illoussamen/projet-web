@@ -40,14 +40,16 @@ const getRandomUser = async() => {
 }
 
 
-const fakerArticles = async() => ({
+const fakerArticles = async(user: any) => (
+  {
   titre: faker.lorem.sentence(),
   contenu: faker.lorem.paragraph(),
   image: faker.image.imageUrl(),
   published: true,
-  author:(await getRandomUser()),
-  authorId:( await getRandomUser()).id,
-  categories: (await getRandomCategory()).name,
+  //author: user,
+  authorId: user.id,
+  updatedAt: new Date(),
+  categories: (await getRandomCategory()),
   
 })
 
@@ -85,12 +87,21 @@ for (let i = 0; i < fakerAdminsRounds; i++) {
 
     /*--------- Articles ---------------*/
     for (let i = 0; i < fakerArticlesRounds; i++) {
+    const user = await getRandomUser(); 
 
-      await prisma.article.create({ data: await fakerArticles() })
+      await prisma.article.create({ data: await fakerArticles(user) })
   }
 
 }
 
+    /// --------- Comments ---------------
+    const articles =  prisma.article.findMany()
+    for (let i = 0; i < articles.length; i++) {
+        const numberOfComments = Math.floor(Math.random() * 20)
+        for (let j = 0; j < numberOfComments; j++) {
+             prisma.commentaire.create({ data: fakerComments(articles[i].id) })
+        }
+    }
 
 main()
   .catch((e)=>{
