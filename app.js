@@ -20,6 +20,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/articles',articlesRouter);
+app.use('/categories',categoriesRouter);
+app.use('/commentaires',commentairesRouter);
+app.use('/auth',authRouter);
+/*
 app.use('/', indexRouter);
 app.use('/users',AuthU, usersRouter);
 app.use('/articles',AuthU,articlesRouter);
@@ -27,5 +35,5 @@ app.use('/categories',AuthU,categoriesRouter);
 app.use('/commentaires',AuthU,commentairesRouter);
 app.use('/auth',authRouter);
 
-
+*/
 module.exports = app;

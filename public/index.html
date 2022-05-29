@@ -1,13 +1,227 @@
 <html>
 
 <head>
-  <name>Express</name>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+ 
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/script.js" ></script>
+
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid p-2 ">
+      <img src="./img/9d1687fe53247d0da876e4bff2e3ce64.png" alt="" width="60" height="50">
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <form class="d-flex">
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item px-3">
+                <a class="nav-link active" aria-current="page" href="./index.html"> Home</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" href="./articles.html">Articles</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link active" href="./categories.html">Categories</a>
+              </li>
+            </ul>
+        </form>
+      </div>
+    </div>
+</nav>
+
+<script>
+
+</script>
+
+<!-- <input type="button" onclick="test()" value="test">-->
+
+
+
+  <div class="container mt-100 mt-60">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+              <br>
+                <h4 class="title mb-4">Publish your passions, your way !</h4>
+                <p class="text-muted para-desc mx-auto mb-0"></p>
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+<!--CARD-->
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="https://picsum.photos/350/280?12" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Marketing</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Quick guide on business with friends.</a></h4>
+                    <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Lisa Marvel</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+        
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="https://picsum.photos/350/280?25" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Event</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Become more money-minded</a></h4>
+                    <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Joya Aafri</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+        
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+            <div class="blog-post rounded border">
+                <div class="blog-img d-block overflow-hidden position-relative">
+                    <img src="https://picsum.photos/350/280?18" class="img-fluid rounded-top" alt="">
+                    <div class="overlay rounded-top bg-dark"></div>
+                    <div class="post-meta">
+                        <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                        <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="content p-3">
+                    <small class="text-muted p float-right">19th Oct, 19</small>
+                    <small><a href="javascript:void(0)" class="text-primary">Software</a></small>
+                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Quick guide on business with friends.</a></h4>
+                    <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                    <div class="pt-3 mt-3 border-top d-flex">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                        <div class="author mt-2">
+                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Martin Sobhe</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end blog post-->
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="blog-post rounded border">
+              <div class="blog-img d-block overflow-hidden position-relative">
+                  <img src="https://picsum.photos/350/280?77" class="img-fluid rounded-top" alt="">
+                  <div class="overlay rounded-top bg-dark"></div>
+                  <div class="post-meta">
+                      <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                      <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                  </div>
+              </div>
+              <div class="content p-3">
+                  <small class="text-muted p float-right">19th Oct, 19</small>
+                  <small><a href="javascript:void(0)" class="text-primary">Marketing</a></small>
+                  <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Quick guide on business with friends.</a></h4>
+                  <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                  <div class="pt-3 mt-3 border-top d-flex">
+                      <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                      <div class="author mt-2">
+                          <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Chloe Schulist</a></h6>
+                      </div>
+                  </div>
+              </div>
+          </div><!--end blog post-->
+      </div><!--end col-->
+      
+      <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="blog-post rounded border">
+              <div class="blog-img d-block overflow-hidden position-relative">
+                  <img src="https://picsum.photos/350/280?55" class="img-fluid rounded-top" alt="">
+                  <div class="overlay rounded-top bg-dark"></div>
+                  <div class="post-meta">
+                      <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                      <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                  </div>
+              </div>
+              <div class="content p-3">
+                  <small class="text-muted p float-right">19th Oct, 19</small>
+                  <small><a href="javascript:void(0)" class="text-primary">Event</a></small>
+                  <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Become more money-minded</a></h4>
+                  <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                  <div class="pt-3 mt-3 border-top d-flex">
+                      <img src="https://bootdey.com/img/Content/avatar/avatar8.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                      <div class="author mt-2">
+                          <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">'Adolph Yost'</a></h6>
+                      </div>
+                  </div>
+              </div>
+          </div><!--end blog post-->
+      </div><!--end col-->
+      
+      <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="blog-post rounded border">
+              <div class="blog-img d-block overflow-hidden position-relative">
+                  <img src="https://picsum.photos/350/280?865" class="img-fluid rounded-top" alt="">
+                  <div class="overlay rounded-top bg-dark"></div>
+                  <div class="post-meta">
+                      <a href="javascript:void(0)" class="text-light d-block text-right like"><i class="mdi mdi-heart"></i> 33</a>
+                      <a href="javascript:void(0)" class="text-light read-more">Read More <i class="mdi mdi-chevron-right"></i></a>
+                  </div>
+              </div>
+              <div class="content p-3">
+                  <small class="text-muted p float-right">19th Oct, 19</small>
+                  <small><a href="javascript:void(0)" class="text-primary">Software</a></small>
+                  <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">Quick guide on business with friends.</a></h4>
+                  <p class="text-muted mt-2">There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.</p>
+                  <div class="pt-3 mt-3 border-top d-flex">
+                      <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                      <div class="author mt-2">
+                          <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">Kariane Daniel</a></h6>
+                      </div>
+                  </div>
+              </div>
+          </div><!--end blog post-->
+      </div><!--end col-->
+  </div><!--end row-->
+</div>
+
+
+
+  <!-- Jquery cdn -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 </body>
 
 </html>
