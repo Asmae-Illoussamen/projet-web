@@ -36,7 +36,7 @@ model article{
   contenu String
   image Json
   createdAt DateTime @default(now())
-  updatedAt DateTime
+  updatedAt DateTime @default(now())
   published Boolean
   commentaires commentaire[]
 
@@ -54,7 +54,7 @@ model commentaire{
 
 model categorie{
   id Int @id @default(autoincrement())
-  name String @unique @db.VarChar(80)
+  name String  @db.VarChar(80)
 
   articles CategoriesOnPosts[]
 }
