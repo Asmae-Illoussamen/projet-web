@@ -45,9 +45,21 @@
 
 <script>
 
+function showCategories(data) {
+    $categoriesList = $("#clist");
+  
+    data.forEach((e) => {
+      const $li = $(
+        '<li class="listElement"><span class="listCategorie"> Categorie </span> : <span class="listCategorieCount">33</span> Article </li>'
+      );
+      $(".listCategorie", $li).text(e.name);
+      $(".listCategorieCount", $li).text(e.articles.length);
+      $li.appendTo($categoriesList);
+    });
+  
+  }
+  
 </script>
-
-<!-- <input type="button" onclick="test()" value="test">-->
 
 
 
